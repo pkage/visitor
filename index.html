@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
+<head>
+	<meta charset="UTF-8">
+	<title>visitor</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/satellite.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="fullscreen grid horiz-grid">
+			<div class="col-5 center-column">
+				<h1 class="addrdisplay">{{addr}}</h1>
+				<h3>you are currently <span class="highlight">{{ (addr == og_addr) ? 'not anonymous' : 'anonymous' }}</span>. <a class="clickable" v-on:click="toggleMask">click to change.</a></h3>
+			</div>
+			<div class="col-5 center-column">
+			</div>
+		</div>
+		<div class="fullscreen center-column popup hidden" id="errorPopup">
+			<h1>something broke!</h1>
+			<h3>check the error console for details</h3>
+		</div>
+		<div class="fullscreen center-column popup hidden" id="waitPopup">
+			<h1><i>setting new address</i></h1>
+			<h3><i>please wait...</i></h3>
+		</div>
+
+		<div class="fullscreen center-column popup hidden" id="wifiPopup">
+			<h1>select a wifi network</h1>
+			<table>
+			<thead>
+				<tr>
+					<th>ssid</th>
+					<th>security</th>
+					<th>channel</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+<script src="assets/js/lib/vue.js"></script>
+<script src="assets/js/lib/umbrella.min.js"></script>
+<script defer>
+	require('./assets/js/app.js');
+</script>
+
 </html>

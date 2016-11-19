@@ -23,6 +23,15 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+    "electron-prebuilt": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "sudo-prompt": "^6.2.0"
+  },
+  "dependencies": {
+    "macaddress": "^0.2.8",
+    "sudo-prompt": "^6.2.0",
+    "wifi-control": "^2.0.0"
   }
 }
